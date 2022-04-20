@@ -22,9 +22,13 @@ app.route('/:id/workouts')
 .post((req,res)=>{
     res.send('create a new workout for said routine id ')
 })
-.delete((req,res)=>{
-    res.send('delete a workout from routine by ID')
+.put((req,res)=>{
+    res.send('edit the routine by ID')
 })
+.delete((req,res)=>{
+    res.send('delete a routine by ID and all workouts associated')
+})
+
 
 //routine Controller
 app.get('/edit/:id', (req,res)=>{
@@ -39,10 +43,17 @@ app.get('/new', (req,res)=>{
 
 //Workout Controller
 app.route('/:id/workouts/:id')
+.get((req,res)=>{
+    res.send('form to view/edit workout in routine by id')
+})
 .put((req,res)=>{
     req.params.id
-    res.send('edit  routine by ID- edit name of routine and muscle groups, date, and completed checkbox')
+    res.send('edit workout by ID')
 })
+.delete((req,res)=>{
+    res.send('delete a workout in routine by ID')
+})
+
 
 app.get('/:id/workouts/new', (req,res)=>{
     res.send('form to create workout same as edit a workout includes cancel and submit button')
