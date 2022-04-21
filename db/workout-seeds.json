@@ -1,0 +1,14 @@
+
+
+[
+    {
+        "name": "Bench Press",
+        "muscleGroups":["chest", "triceps"],
+        "sets": 4,
+        "repRangeLow": 8,
+        "repRangeHigh": 12,
+        "equipment": "Dumbbell",
+        "routineId": {}
+        
+    }
+]
