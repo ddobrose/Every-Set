@@ -1,10 +1,14 @@
 const mongoose = require('../db/connection')
+const Schema = mongoose.Schema
 
-const RoutineSchema = new mongoose.schema({ 
+const RoutineSchema = new Schema({
     name: String, 
     dateToDo: Date, 
     muscleGroups:[String], 
-    completed:Boolean})
+    completed:Boolean,
+    workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}] 
+})
+    
 
     const Routine= mongoose.model('Routine', RoutineSchema)
 
