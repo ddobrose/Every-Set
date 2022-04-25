@@ -3,15 +3,10 @@ const mongoose = require('mongoose')
 const mongoURI = 
 process.env.NODE_ENV === "production"
 ?process.env.DB_URL
-:process.env.DEV_DB_URL
+:'mongodb://localhost:27017/every-set'
 
 mongoose
-  .connect(mongoURI, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-  })
+  .connect(mongoURI)
   .then((instance) =>
     console.log(`Connected to db: ${instance.connections[0].name}`)
   )

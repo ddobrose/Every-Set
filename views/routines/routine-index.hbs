@@ -3,5 +3,21 @@
 </header>
 
 <ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between"></li>
+    {{#each routines}}
+    <li class="list-group-item d-flex justify-content-between">
+        {{#if this.complete}}
+<div class = "text-muted"><s>{{this.name}}</s></div>
+{{else}}
+<div>{{this.name}}-{{this.dayToDo}}</div>
+{{/if}}
+
+
+<div class = "links">
+    <a href="routines/{{this.id}}/edit" class="btn btn-info">Edit</a>
+    <form action="/{{this.id}}?_method=DELETE" method="POST" class="d-inline">
+    <input type="submit" value="Delete" class="btn btn-danger"></form>
+</div>
+</li>
+{{/each}}
 </ul>
+<a href="/routines/new" class="btn btn-primary">Add Routine</a>

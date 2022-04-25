@@ -1,0 +1,31 @@
+<h2>Edit Routine</h2>
+
+<form action="/routines/{{this.id}}/?_method=put" method="POST">
+<div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"
+    class="form-control" value="{{this.name}}">
+    <label for="dayToDo">Scheduled Day:</label>
+    <input type="text", id="dayToDo" name="dayToDo" class="form-control" value="{{this.dayToDo}}">
+    <label for="muscleGroups">Muscle Group 1:</label>
+    <input type="text", id="muscleGroupOne" name="muscleGroupOne" class="form-control" value="{{this.muscleGroups.[0]}}">
+    <label for="muscleGroups">Muscle Group 2:</label>
+    <input type="text", id="muscleGroupTwo" name="muscleGroupTwo" class="form-control" value="{{this.muscleGroups.[1]}}">
+    <label for="muscleGroups">Muscle Group 3:</label>
+    <input type="text", id="muscleGroupThree" name="muscleGroupThree" class="form-control" value="{{this.muscleGroups.[2]}}">
+    <label for="muscleGroups">Muscle Group 4:</label>
+    <input type="text", id="muscleGroupFour" name="muscleGroupFour" class="form-control" value="{{this.muscleGroups.[3]}}">
+</div>
+<div class="form-check mb-3">
+    {{#if this.complete}}
+    <input class="form-check-input" type="checkbox" id="complete" name="complete" checked="true"/>
+    {{else}} 
+    <input class="form-check-input" type="checkbox" id="complete" name="complete">
+    {{/if}}
+    <label class="form-check-label" for="complete">Complete</label> 
+
+
+</div>
+<input type="submit" value="Update Routine" class="btn btn-primary"/>
+<a href="/routines" class="btn btn-primary">Cancel</a>
+</form>

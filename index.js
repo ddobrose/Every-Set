@@ -1,19 +1,23 @@
+const express = require('express');
+const methodOverride = require('method-override');
 require('dotenv').config()
-const express = require('express')
 const app = express()
+const routineController = require('./controllers/routine-controller')
+const workoutController = require('./controllers/workout-controller')
+
+
+app.set('view engine', 'hbs');
+app.use(express.urlencoded({extended:true}))
+app.use(methodOverride('_method'))
+app.use('/routines', routineController)
+app.use('/routines/:id/workouts', workoutController)
 
 app.get('/test', (req,res)=> {
     res.send('network is working')
 })
 
 //routine controller
-app.route('/')
-.get((req,res)=>{
-    res.send('index of routines- includes view/edit/delete buttons by each routine, add routine button at bottom ')
-})
-.post((req,res)=>{
-    res.send('Create new Routine- add name, date,muscle groups worked')
-})
+
 
 //workout controller
 app.route('/:id/workouts')
@@ -32,13 +36,7 @@ app.route('/:id/workouts')
 
 
 //routine Controller
-app.get('/edit/:id', (req,res)=>{
-    res.send('edit routine by ID Form- includes forms to add or change muscle groups worked and change date to complete and name has submit button')
-})
 
-app.get('/new', (req,res)=>{
-    res.send('Create a Routine Form- has all same info as edit')
-})
 
 
 

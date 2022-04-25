@@ -1,0 +1,9 @@
+[
+    {
+        "name": "Chest Day",
+        "dayToDo": "Monday",
+        "muscleGroups":["chest", "triceps"],
+        "completed":false,
+        "workouts":[]
+    }
+]
