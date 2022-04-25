@@ -1,0 +1,37 @@
+<h2>Edit Routine</h2>
+
+<form action="/routines/{{this.id}}/?_method=put" method="POST">
+<div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"
+    class="form-control" value="{{this.name}}">
+    <label for="sets">Sets</label>
+    <input type="text", id="sets" name="sets" class="form-control" value="{{this.sets}}">
+    <label for="repRangeLow">Rep Minimum</label>
+    <input type="text", id="repRangeLow" name="repRangeLow" class="form-control" value="{{this.repRangeLow}}">
+    <label for="repRangeHigh">Rep Max</label>
+    <input type="text", id="repRangeHigh" name="repRangeHigh" class="form-control" value="{{this.repRangeHigh}}">
+    <label for="equipment">Equipment</label>
+    <input type="text", id="equipment" name="equipment" class="form-control" value="{{this.equipment}}">
+    <label for="muscleGroups">Muscle Group 1:</label>
+    <input type="text", id="muscleGroupOne" name="muscleGroupOne" class="form-control" value="{{this.muscleGroups.[0]}}">
+    <label for="muscleGroups">Muscle Group 2:</label>
+    <input type="text", id="muscleGroupTwo" name="muscleGroupTwo" class="form-control" value="{{this.muscleGroups.[1]}}">
+    <label for="muscleGroups">Muscle Group 3:</label>
+    <input type="text", id="muscleGroupThree" name="muscleGroupThree" class="form-control" value="{{this.muscleGroups.[2]}}">
+    <label for="muscleGroups">Muscle Group 4:</label>
+    <input type="text", id="muscleGroupFour" name="muscleGroupFour" class="form-control" value="{{this.muscleGroups.[3]}}">
+</div>
+{{!-- <div class="form-check mb-3">
+    {{#if this.complete}}
+    <input class="form-check-input" type="checkbox" id="completed" name="completed" checked="true"/>
+    {{else}} 
+    <input class="form-check-input" type="checkbox" id="completed" name="completed">
+    {{/if}}
+    <label class="form-check-label" for="completed">Complete</label> 
+
+
+</div> --}}
+<input type="submit" value="Update Workout" class="btn btn-primary"/>
+<a href="/routines/" class="btn btn-primary">Cancel</a>
+</form>

@@ -5,7 +5,7 @@
 <ul class="list-group">
     {{#each routines}}
     <li class="list-group-item d-flex justify-content-between">
-        {{#if this.complete}}
+        {{#if this.completed}}
 <div class = "text-muted"><s>{{this.name}}</s></div>
 {{else}}
 <div>{{this.name}}-{{this.dayToDo}}</div>
@@ -13,8 +13,9 @@
 
 
 <div class = "links">
+    <a href="routines/{{this.id}}/workouts" class="btn btn-info">View</a>
     <a href="routines/{{this.id}}/edit" class="btn btn-info">Edit</a>
-    <form action="/{{this.id}}?_method=DELETE" method="POST" class="d-inline">
+    <form action="/routines/{{this.id}}?_method=DELETE" method="POST" class="d-inline">
     <input type="submit" value="Delete" class="btn btn-danger"></form>
 </div>
 </li>
