@@ -15,10 +15,10 @@
 <div class = "links">
     <a href="/{{this.id}}/workouts" class="btn btn-info">View</a>
     <a href="/{{this.id}}/edit" class="btn btn-info">Edit</a>
-    <form action="/routines/{{this.id}}?_method=DELETE" method="POST" class="d-inline">
+    <form action="/{{this.id}}?_method=DELETE" method="POST" class="d-inline">
     <input type="submit" value="Delete" class="btn btn-danger"></form>
 </div>
 </li>
 {{/each}}
 </ul>
-<a href="/routines/new" class="btn btn-primary">Add Routine</a>
+<a href="/new" class="btn btn-primary">Add Routine</a>

@@ -1,6 +1,6 @@
-<h2>Edit Routine</h2>
+<h2>Edit Workout</h2>
 
-<form action="/routines/{{this.id}}/?_method=put" method="POST">
+<form action="/{{this.routineId}}/workouts/{{this.id}}?_method=put" method="POST">
 <div class="form-group">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name"
@@ -33,5 +33,5 @@
 
 </div> --}}
 <input type="submit" value="Update Workout" class="btn btn-primary"/>
-<a href="/routines/" class="btn btn-primary">Cancel</a>
+<a href="/{{this.routineId}}/workouts" class="btn btn-primary">Cancel</a>
 </form>

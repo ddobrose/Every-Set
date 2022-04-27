@@ -15,7 +15,7 @@ router.route('/')
 .post((req,res)=>{
     Routine.create(req.body)
     .then((routine)=>{
-        res.redirect('/routines')
+        res.redirect('/')
     })
     .catch(console.error)
 })
@@ -99,14 +99,29 @@ router.route('/:id/workouts')
 //Workout Controller
 router.route('/:id/workouts/:workoutid/edit')
 .get((req,res)=>{
-    res.send('form to view/edit workout in routine by id')
+    Workout.findOne({id:req.params.workoutid})
+    .then((workout)=>{
+        res.render('workouts/edit-view-workout',workout)
+    })
 })
 
 
 //not working
 router.route('/:id/workouts/:workoutid')
 .put((req,res)=>{
-    res.send(`edit workout ${req.params.workoutid}`)
+    Workout.findOneAndUpdate(
+        {id:req.params.workoutid},
+        {
+            name: req.body.name, 
+    sets: req.body.sets,
+    repRangeLow: req.body.repRangeLow,
+    repRangeHigh: req.body.repRangeHigh,
+    equipment: req.body.equipment,
+    muscleGroups: req.body.muscleGroups,
+    
+},
+{new:true})
+.then(res.redirect(`/${req.params.id}/workouts`))
 })
 .delete((req,res)=>{
     const id = req.params.workoutid
