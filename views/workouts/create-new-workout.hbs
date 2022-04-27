@@ -1,5 +1,5 @@
 <h2>New Workout</h2>
-<form action="/{{this.id}}/workouts" method="POST">
+<form action="/{{this._id}}/workouts" method="POST">
 
 
 <div class="form-group">
@@ -15,20 +15,20 @@
     <label for="equipment">Equipment</label>
     <input type="text", id="equipment" name="equipment" class="form-control">
     <label for="muscleGroups">Muscle Group 1</label>
-    <input type="text", id="muscleGroupOne" name="muscleGroupOne" class="form-control">
+    <input type="text", id="muscleGroupOne" name="muscleGroups" class="form-control">
     <label for="muscleGroups">Muscle Group 2</label>
-    <input type="text", id="muscleGroupTwo" name="muscleGroupTwo" class="form-control">
+    <input type="text", id="muscleGroupTwo" name="muscleGroups" class="form-control">
     <label for="muscleGroups">Muscle Group 3</label>
-    <input type="text", id="muscleGroupThree" name="muscleGroupThree" class="form-control">
+    <input type="text", id="muscleGroupThree" name="muscleGroups" class="form-control">
     <label for="muscleGroups">Muscle Group 4</label>
-    <input type="text", id="muscleGroupFour" name="muscleGroupFour" class="form-control">
+    <input type="text", id="muscleGroupFour" name="muscleGroups" class="form-control">
     <label for="routineId">Routine ID</label>
-    <input type="text", id="routineId" name="routineId" class="form-control" value="{{this.id}}">
+    <input type="hidden", id="routineId" name="routineId" class="form-control" value="{{this.id}}">
     
 
 </div>
 
 <input type="submit" class="btn btn-primary"/>
-<a href="/{{routine.id}}/workouts" class="btn btn-secondary">Cancel</a>
+<a href="/{{this._id}}/workouts" class="btn btn-secondary">Cancel</a>
 
 </form>

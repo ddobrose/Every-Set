@@ -55,7 +55,9 @@ router.route("/:id")
 .delete((req,res)=>{
     const id = req.params.id
     Workout.deleteMany({routineId:id})
-   Routine.findOneAndRemove({_id:id})
+    .then(()=>{
+        return Routine.findOneAndRemove({_id:id})
+    })
    .then(()=>{
        res.redirect('/')
    })
@@ -99,9 +101,11 @@ router.route('/:id/workouts')
 //Workout Controller
 router.route('/:id/workouts/:workoutid/edit')
 .get((req,res)=>{
-    Workout.findOne({id:req.params.workoutid})
+    const id = req.params.workoutid
+    Workout.findOne({_id:id})
     .then((workout)=>{
         res.render('workouts/edit-view-workout',workout)
+        console.log(workout)
     })
 })
 
@@ -110,7 +114,7 @@ router.route('/:id/workouts/:workoutid/edit')
 router.route('/:id/workouts/:workoutid')
 .put((req,res)=>{
     Workout.findOneAndUpdate(
-        {id:req.params.workoutid},
+        {_id:req.params.workoutid},
         {
             name: req.body.name, 
     sets: req.body.sets,
@@ -125,11 +129,10 @@ router.route('/:id/workouts/:workoutid')
 })
 .delete((req,res)=>{
     const id = req.params.workoutid
-    Workout.findOneAndRemove({id:id})
+    Workout.findOneAndRemove({_id:id})
     .then(()=>{
         res.redirect(`/${req.params.id}/workouts`)
-    })
-    res.send('delete a workout in routine by ID')
+})
 })
 
 //working
