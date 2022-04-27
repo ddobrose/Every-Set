@@ -10,3 +10,4 @@ Workout.deleteMany({})
 .finally(()=> {
     process.exit()
 })
+

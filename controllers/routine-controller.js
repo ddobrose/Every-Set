@@ -1,6 +1,7 @@
 const express = require('express')
 const req = require('express/lib/request')
 const res = require('express/lib/response')
+const async = require('hbs/lib/async')
 const router = express.Router()
 
 const Routine = require('../models/routine-model')
@@ -47,32 +48,45 @@ router.route("/:id")
 {new:true}
     )
 .then(()=>{
-    res.redirect('/routines')
+    res.redirect('/')
 })
 .catch(console.error)
 })
 .delete((req,res)=>{
     const id = req.params.id
-    Workout.deleteMany({_routineId:id})
+    Workout.deleteMany({routineId:id})
    Routine.findOneAndRemove({_id:id})
    .then(()=>{
-       res.redirect('/routines')
+       res.redirect('/')
    })
    .catch(console.error)
 })
 
+
+//working
 router.route('/:id/workouts')
-.get((req,res) =>{
-    // Routine.find({_id:req.params.id}) // How do i declare this
-    Workout.find({_routineId:req.params.id})//and this as separate variables in order to reference both in the view page
-    .then((workouts)=>{
-        res.render('workouts/view-routine-workouts',{workouts})
-        console.log(workouts[0].routineId)//like this
-        console.log(workouts[0].id)
-})
+.get(async(req,res) =>{
+    const id = req.params.id
+    
+    let routine = await Routine.find({_id:id})
+    let workouts = await Workout.find({routineId:id})
+    let context = { 
+        routine: routine,
+        workouts: workouts
+    }
+    
+        res.render('workouts/view-routine-workouts',context)
+        console.log(id)//like this
+        console.log(context)
+        // console.log(routine)
+
 })
 .post((req,res)=>{
-    res.send('create a new workout for said routine id ')
+    Workout.create(req.body)
+    .then((workout)=>{
+        res.redirect(`/${workout.routineId}/workouts`)
+    })
+    .catch(console.error)
 })
 
 
@@ -89,21 +103,26 @@ router.route('/:id/workouts/:workoutid/edit')
 })
 
 
-
+//not working
 router.route('/:id/workouts/:workoutid')
 .put((req,res)=>{
     res.send(`edit workout ${req.params.workoutid}`)
 })
 .delete((req,res)=>{
+    const id = req.params.workoutid
+    Workout.findOneAndRemove({id:id})
+    .then(()=>{
+        res.redirect(`/${req.params.id}/workouts`)
+    })
     res.send('delete a workout in routine by ID')
 })
 
-
+//working
 router.get('/:id/workouts/new', (req,res)=>{
     Routine.findById(req.params.id)
     .then((routine)=>{
     res.render('workouts/create-new-workout',routine)
-    console.log(routine.name)
+    console.log(routine.id)
 })
 .catch(console.error)
 })

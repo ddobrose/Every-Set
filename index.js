@@ -9,7 +9,7 @@ app.set('view engine', 'hbs');
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
-app.use('/routines', routineController)
+app.use('/', routineController)
 // app.use('/routines/:id/workouts', workoutController)
 
 app.get('/test', (req,res)=> {
