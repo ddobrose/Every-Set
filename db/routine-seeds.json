@@ -1,9 +1,36 @@
 [
     {
-        "name": "Chest Day",
-        "dayToDo": "Monday",
-        "muscleGroups":["chest", "triceps"],
-        "completed":false,
-        "workouts":[]
-    }
+    "name" : "Pull",
+    "dayToDo" : "Wednesday",
+    "muscleGroups" : [
+            "Back",
+            "Biceps",
+            "",
+            ""
+    ],
+    "completed" : false
+},
+{
+    "name" : "Legs",
+    "dayToDo" : "Friday",
+    "muscleGroups" : [
+            "Quads",
+            "Hamstrings",
+            "Calves",
+            ""
+    ],
+    "completed" : false
+},
+{
+    
+    "name" : "Push",
+    "dayToDo" : "Monday",
+    "muscleGroups" : [
+            "Chest",
+            "Triceps",
+            "Shoulders",
+            ""
+    ],
+    "completed" : false
+}
 ]

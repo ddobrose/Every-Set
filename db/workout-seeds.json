@@ -1,14 +1,178 @@
-
-
 [
-    {
-        "name": "Bench Press",
-        "muscleGroups":["chest", "triceps"],
-        "sets": 4,
-        "repRangeLow": 8,
-        "repRangeHigh": 12,
-        "equipment": "Dumbbell",
-        "routineId": ["6266c1d259951284d2e8ce06"]
-        
-    }
+{
+    
+    "name" : "Rows",
+    "muscleGroups" : [
+            "Back",
+            "Biceps",
+            "",
+            ""
+    ],
+    "sets" : 3,
+    "repRangeLow" : 6,
+    "repRangeHigh" : 10,
+    "equipment" : "Barbell",
+    "routine":""
+    
+},
+{
+    
+    "name" : "Lat Pulldown",
+    "muscleGroups" : [
+            "Back",
+            "Biceps",
+            "",
+            ""
+    ],
+    "sets" : 3,
+    "repRangeLow" : 8,
+    "repRangeHigh" : 10,
+    "equipment" : "Cable",
+    "routine":""
+    
+},
+{
+    
+    "name" : "Bicep Curl",
+    "muscleGroups" : [
+            "Bicep",
+            "",
+            "",
+            ""
+    ],
+    "sets" : 3,
+    "repRangeLow" : 8,
+    "repRangeHigh" : 12,
+    "equipment" : "Dumbbell",
+    "routine":""
+    
+},
+{
+    
+    "name" : "Squat",
+    "muscleGroups" : [
+            "Quads",
+            "Glutes",
+            "",
+            ""
+    ],
+    "sets" : 3,
+    "repRangeLow" : 5,
+    "repRangeHigh" : 7,
+    "equipment" : "Barbell",
+    "routine":""
+    
+},
+{
+    
+    "name" : "Leg Press",
+    "muscleGroups" : [
+            "Quads",
+            "Glutes",
+            "",
+            ""
+    ],
+    "sets" : 3,
+    "repRangeLow" : 6,
+    "repRangeHigh" : 8,
+    "equipment" : "Machine",
+    "routine":""
+    
+},
+{
+    
+    "name" : "Hamstring Curl",
+    "muscleGroups" : [
+            "Hamstring",
+            "",
+            "",
+            ""
+    ],
+    "sets" : 3,
+    "repRangeLow" : 5,
+    "repRangeHigh" : 7,
+    "equipment" : "Machine",
+    "routine":""
+    
+},
+{
+    
+    "name" : "Seated Calf Raise",
+    "muscleGroups" : [
+            "Calves",
+            "",
+            "",
+            ""
+    ],
+    "sets" : 3,
+    "repRangeLow" : 10,
+    "repRangeHigh" : 12,
+    "equipment" : "Machine",
+    "routine":""
+    
+},
+{
+    
+    "name" : "Bench Press",
+    "muscleGroups" : [
+            "Chest",
+            "Triceps",
+            "Front Delts",
+            ""
+    ],
+    "sets" : 3,
+    "repRangeLow" : 6,
+    "repRangeHigh" : 10,
+    "equipment" : "Barell",
+    "routine":""
+    
+},
+{
+    
+    "name" : "Incline Bench Press",
+    "muscleGroups" : [
+            "Chest",
+            "Triceps",
+            "Front Delts",
+            ""
+    ],
+    "sets" : 3,
+    "repRangeLow" : 6,
+    "repRangeHigh" : 10,
+    "equipment" : "Dumbbell",
+    "routine":""
+    
+},
+{
+    
+    "name" : "Shoulder Press",
+    "muscleGroups" : [
+            "Front Delts",
+            "Triceps",
+            "Chest",
+            ""
+    ],
+    "sets" : 3,
+    "repRangeLow" : 6,
+    "repRangeHigh" : 10,
+    "equipment" : "Machine",
+    "routine":""
+    
+},
+{
+    
+    "name" : "Skull Crushers",
+    "muscleGroups" : [
+            "Triceps",
+            "Chest",
+            "",
+            ""
+    ],
+    "sets" : 3,
+    "repRangeLow" : 6,
+    "repRangeHigh" : 8,
+    "equipment" : "EZ bar",
+    "routineId" :""
+    
+}
 ]

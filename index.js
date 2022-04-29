@@ -1,5 +1,5 @@
-const express = require('express');
 require('dotenv').config()
+const express = require('express');
 const app = express()
 const routineController = require('./controllers/routine-controller')
 // const workoutController = require('./controllers/workout-controller')
@@ -10,6 +10,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
 app.use('/', routineController)
+app.use(express.static('public'))
 // app.use('/routines/:id/workouts', workoutController)
 
 app.get('/test', (req,res)=> {
