@@ -1,36 +1,35 @@
 [
     {
-    "name" : "Pull",
-    "dayToDo" : "Wednesday",
-    "muscleGroups" : [
-            "Back",
-            "Biceps",
-            "",
-            ""
-    ],
-    "completed" : false
-},
-{
-    "name" : "Legs",
-    "dayToDo" : "Friday",
-    "muscleGroups" : [
-            "Quads",
-            "Hamstrings",
-            "Calves",
-            ""
-    ],
-    "completed" : false
-},
-{
-    
-    "name" : "Push",
-    "dayToDo" : "Monday",
-    "muscleGroups" : [
-            "Chest",
-            "Triceps",
-            "Shoulders",
-            ""
-    ],
-    "completed" : false
-}
-]
+       "name":"Pull",
+       "dayToDo":"Wednesday",
+       "muscleGroups":[
+          "Back",
+          "Biceps",
+          "",
+          ""
+       ],
+       "completed":false
+    },
+    {
+       "name":"Legs",
+       "dayToDo":"Friday",
+       "muscleGroups":[
+          "Quads",
+          "Hamstrings",
+          "Calves",
+          ""
+       ],
+       "completed":false
+    },
+    {
+       "name":"Push",
+       "dayToDo":"Monday",
+       "muscleGroups":[
+          "Chest",
+          "Triceps",
+          "Shoulders",
+          ""
+       ],
+       "completed":false
+    }
+ ]
