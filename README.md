@@ -10,7 +10,7 @@ the workout you can see what muscles the individual workouts are targeting. Once
 can mark it as complete and keep it in the database in order to view for future reference or you can remove the 
 routine along with the workouts from your list.
 
-##Code overview
+## Code overview
 - The App utilizes Handlebars for views and express for routing.
 - All aspects of CRUD are present with GET routes for viewing each page and POST, PUT and DELETE routes for each Schema
 - There are 2 schema present, Routine Schema and Workout Schema with there being a One-to-Many relationship between the two
@@ -58,6 +58,11 @@ the forms for creating and editing workouts look basically the same minus the va
 
 ## Future goals- 
 Some of the future goals for the App include:
--Styling in order to give it a notebook type of look for users to feel like they are just writing in a workout 
-notebook but in app form. I have tracked my workouts with pen and paper for the longest time and feel it is nice to keep
-the same look and feel of pen and paper but in the convenience of using your phone
+- Styling in order to give it a notebook type of look for users to feel like they are just writing in a workout 
+notebook but in app form. I have tracked my workouts with pen and paper for the longest time and feel it is nice to keep the same look and feel of pen and paper but in the convenience of using your phone.
+- Add a way to copy a routine and its workouts to a new item and update the date
+- Add a database of workouts filtered by Muscle group and Equipment with descriptions of workouts and pictures to show form which will help you build routines
+- Create another router that will act as a Calorie tracker as well in order to create an all-purpose fitness app
+- Create a form that allows you to put notes for the workouts to say how it went and possibly track each set
+
+
