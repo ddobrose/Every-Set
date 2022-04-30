@@ -2,7 +2,7 @@
 A workout app to schedule and track workouts
 
 ## Link
-https://mighty-bastion-09524.herokuapp.com/
+https://every-set.herokuapp.com/
 
 ## Description
 Every Set is a CRUD app that I created in order to schedule workouts and track completion. Users are able to

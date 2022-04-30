@@ -65,7 +65,7 @@ router.route("/:id")
 })
 
 
-//working
+
 router.route('/:id/workouts')
 .get(async(req,res) =>{
     const id = req.params.id
@@ -78,9 +78,8 @@ router.route('/:id/workouts')
     }
     
         res.render('workouts/view-routine-workouts',context)
-        console.log(id)//like this
-        console.log(context)
-        // console.log(routine)
+        
+        
 
 })
 .post((req,res)=>{
@@ -93,24 +92,24 @@ router.route('/:id/workouts')
 
 
 
-//routine Controller
 
 
 
 
-//Workout Controller
+
+
 router.route('/:id/workouts/:workoutid/edit')
 .get((req,res)=>{
     const id = req.params.workoutid
     Workout.findOne({_id:id})
     .then((workout)=>{
         res.render('workouts/edit-view-workout',workout)
-        console.log(workout)
+        
     })
 })
 
 
-//not working
+
 router.route('/:id/workouts/:workoutid')
 .put((req,res)=>{
     Workout.findOneAndUpdate(
@@ -135,12 +134,12 @@ router.route('/:id/workouts/:workoutid')
 })
 })
 
-//working
+
 router.get('/:id/workouts/new', (req,res)=>{
     Routine.findById(req.params.id)
     .then((routine)=>{
     res.render('workouts/create-new-workout',routine)
-    console.log(routine.id)
+    
 })
 .catch(console.error)
 })

@@ -12,16 +12,6 @@ app.use('/', routineController)
 app.use(express.static('public'))
 
 
-app.get('/test', (req,res)=> {
-    res.send('network is working')
-})
-
-// app.get('/favicon.ico', (req, res) => {res.send("dummy")})
-
-
-
-
-
 const port = process.env.PORT || 3421
 
 app.listen(port, () => {
